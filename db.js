@@ -12,11 +12,11 @@ const setup = async()=> {
     DROP TABLE IF EXISTS users;
     CREATE TABLE users(
       id SERIAL PRIMARY KEY,
-      name VARCHAR(255)
+      name VARCHAR(255) UNIQUE
     );
     INSERT INTO users(name) values('moe');
     INSERT INTO users(name) values('lucy');
-    INSERT INTO users(name) values('stanley');
+    INSERT INTO users(name) values('stan');
   `;
   await client.query(SQL);
 };
